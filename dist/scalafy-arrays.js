@@ -1,3 +1,25 @@
 /**
- * Created by xBons on 6/24/2016.
- */
+ *  Finds all different elements in an array.
+ * */
+Array.prototype.distinct = function () {
+    return this.reduce(function (a, b) {
+        if (a.indexOf(b) == -1) a.push(b);
+        return a;
+    }, [])
+};
+
+
+/**
+ * Receives a grouping function and returns a json composed by all
+ * distinct keys associated with their elements.
+ * */
+Array.prototype.groupBy = function (gf) {
+    return this.reduce(function (a, b) {
+        var key = gf(b);
+
+        if (key in a) a[key].push(b);
+        else a[key] = [b];
+
+        return a;
+    }, {});
+};
