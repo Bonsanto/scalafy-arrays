@@ -25,14 +25,21 @@ Array.prototype.groupBy = function (gf) {
 };
 
 /**
- * Receives a mapping function and executes de function for every 
+ * Flattens an a double leveled array into a single level one.
+ * */
+Array.prototype.flatten = function () {
+    return this.reduce(function (a, b) {
+        return a.concat(b);
+    });
+};
+
+/**
+ * Receives a mapping function and executes de function for every
  * element in the array and flatten the result.
  */
 // todo: Add exception in case the array isn't double nested.
 Array.prototype.flatMap = function (mf) {
     return this.map(function (e) {
-        return mf(e);
-    }).reduce(function (a, b) {
-        return a.concat(b);
-    });
-};  
+        return e.map(mf);
+    }).flatten();
+};
