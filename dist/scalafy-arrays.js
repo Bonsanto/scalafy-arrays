@@ -93,3 +93,12 @@ Array.prototype.init = function () {
 Array.prototype.last = function () {
     return this[this.length - 1];
 };
+
+/**
+ * Returns the sum of all elements of the array.
+ * */
+Array.prototype.sum = function () {
+    return this.reduce(function (a, b) {
+        return a + b;
+    });
+};
