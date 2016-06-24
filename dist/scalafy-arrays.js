@@ -23,3 +23,16 @@ Array.prototype.groupBy = function (gf) {
         return a;
     }, {});
 };
+
+/**
+ * Receives a mapping function and executes de function for every 
+ * element in the array and flatten the result.
+ */
+// todo: Add exception in case the array isn't double nested.
+Array.prototype.flatMap = function (mf) {
+    return this.map(function (e) {
+        return mf(e);
+    }).reduce(function (a, b) {
+        return a.concat(b);
+    });
+};  
