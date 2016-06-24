@@ -43,3 +43,53 @@ Array.prototype.flatMap = function (mf) {
         return e.map(mf);
     }).flatten();
 };
+
+/**
+ * Finds the maximum value in the array. Notice that it supposes all
+ * elements are of the same and comparable.
+ */
+Array.prototype.max = function () {
+    return this.reduce(function (a, b) {
+        return a > b ? a : b;
+    });
+};
+
+/**
+ * Finds the minimum value in the array. Notice that it supposes all
+ * elements are of the same and comparable.
+ */
+Array.prototype.min = function () {
+    return this.reduce(function (a, b) {
+        return a < b ? a : b;
+    });
+};
+
+/**
+ * Returns the first element of the array.
+ * */
+Array.prototype.head = function () {
+    return this[0];
+};
+
+/**
+ * Returns an array consisting of all original elements except the
+ * first one.
+ * */
+Array.prototype.tail = function () {
+    return this.slice(1);
+};
+
+/**
+ * Returns an array consisting of all original elements except the
+ * last one.
+ * */
+Array.prototype.init = function () {
+    return this.slice(0, this.length - 1)
+};
+
+/**
+ * Returns the last element of the array.
+ * */
+Array.prototype.last = function () {
+    return this[this.length - 1];
+};
