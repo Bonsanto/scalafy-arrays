@@ -102,3 +102,15 @@ Array.prototype.sum = function () {
         return a + b;
     });
 };
+
+/**
+ * Zips two arrays.
+ * */
+Array.prototype.zip = function (that) {
+    var result = [];
+
+    for (var i = 0; i < Math.min(that.length, this.length); i++)
+        result.push([this[i], that[i]])
+
+    return result;
+};
