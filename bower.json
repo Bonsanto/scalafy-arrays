@@ -1,0 +1,25 @@
+{
+  "name": "scalafy-arrays",
+  "homepage": "https://github.com/Bonsanto/scalafy-arrays",
+  "authors": [
+    "Alberto Bonsanto <xBonsantox@hotmail.com>"
+  ],
+  "description": "A tiny library to add Scala's Collection functionalities to JavaScript's Array.",
+  "main": "scalafy.js",
+  "keywords": [
+    "scala",
+    "javascript",
+    "collection",
+    "array",
+    "functional",
+    "functional-programming"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
