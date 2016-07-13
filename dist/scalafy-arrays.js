@@ -2,7 +2,7 @@
  * Counts the number of elements in the mutable indexed sequence which satisfy a predicate (f).
  */
 Array.prototype.count = function (f) {
-    return this.filter(f).length;
+    return arguments.length == 0 ? this.length : this.filter(f).length;
 };
 
 /**
@@ -28,7 +28,7 @@ Array.prototype.distinct = function () {
 
 
 /**
- * Tests whether a predicate holds for at least one element of this mutable indexed sequence. O(n)
+ * Tests whether a predicate holds for at least one element of this array. O(n)
  * Ugly but O(1) in the best case. While filter().length would be 0(n).
  * */
 Array.prototype.exists = function (p) {
@@ -38,7 +38,7 @@ Array.prototype.exists = function (p) {
 };
 
 /**
- * Selects all elements of this mutable indexed sequence which satisfy a predicate.
+ * Selects all elements of this array which don't satisfy a predicate.
  * */
 Array.prototype.filterNot = function (p) {
     return this.filter(function (e) {
