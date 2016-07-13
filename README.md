@@ -14,7 +14,7 @@ bower install scalafy-arrays
 After this, everything will be downloaded in your default bower's folder or `bower_components`. So you have to add the 
 library your `html` file.
 
-```javascript
+```html
 <script src="bower_components/scalafy-arrays/dist/scalafy-arrays.js"></script>
 ```
 ## What does it add?
