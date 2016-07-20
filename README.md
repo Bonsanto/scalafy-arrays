@@ -64,7 +64,7 @@ elements.
     }));
 ``` 
 
-- `flatMap` Receives a mapping function and executes de function for every element in the array and flatten the result.
+- `flatMap` Receives a mapping function and executes the function for every element in the array and flatten the result.
 
 ```javascript
     var arr = [[1, 2], [3, 4]];
