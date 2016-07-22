@@ -22,54 +22,72 @@ library your `html` file.
 elements.
  
 ```javascript
-    var arr = [1, 2, 3, 4];
+var arr = [1, 2, 3, 4];
     
-    console.log(arr);    // 4
-    console.log(arr.count(function(e){     // 2
-        return e % 2 === 0;
-    })); 
+console.log(arr);    // 4
+console.log(arr.count(function(e){     // 2
+    return e % 2 === 0;
+})); 
 ```
 
 - `diff(that)` Computes the multiset difference between this array and another array.
 
 ```javascript
-    var arr = [1, 2, 3];
+var arr = [1, 2, 3];
     
-    console.log(arr.diff([1,3]));    // [2]
+console.log(arr.diff([1,3]));    // [2]
 ``` 
 
 - `distinct` Finds all different elements in an array.
 
 ```javascript
-    var arr = [1, 1, 2, 2, 3, 3];
-    
-    console.log(arr.distinct());    // [1, 2, 3]
+var arr = [1, 1, 2, 2, 3, 3];
+
+console.log(arr.distinct());    // [1, 2, 3]
 ```
 
 - `exists` Tests whether a predicate holds for at least one element of this array.
 
 ```javascript
-    console.log(arr.exists(function(e){    // true
-        return e === 2;
-    }));    
+console.log(arr.exists(function(e){    // true
+    return e === 2;
+}));    
 ```
 
 - `filterNot` Selects all elements of this array which don't satisfy a predicate. I.E. is like `filter` but the opposite.
 
 ```javascript
-    var arr = [1, 2, 3, 4];
-    
-    console.log(arr.filterNot(function(e){    // [1, 3]
-        return e % 2 == 0;
-    }));
+var arr = [1, 2, 3, 4];
+
+console.log(arr.filterNot(function(e){    // [1, 3]
+    return e % 2 == 0;
+}));
 ``` 
 
 - `flatMap` Receives a mapping function and executes the function for every element in the array and flatten the result.
 
 ```javascript
-    var arr = [[1, 2], [3, 4]];
-    
-    console.log(a.flatMap(e){ //
-        return e;
-    });
+var arr = [[1, 2], [3, 4]];
+
+console.log(a.flatMap(e){ // [2, 4, 6, 8]
+    return e * 2;
+});
+```
+
+- `flatten` similar to flatMap. Flattens a two-dimensional array by concatenating all its rows into a single array.
+
+```javascript
+console.log(a.flatten());          // [1, 2, 3, 4] 
+```
+
+- `forall` Tests whether a predicate holds for all elements of this array.
+
+```javascript
+console.log(a.forall(function(e){ // true
+    return e % 1 == 0;
+}));
+
+console.log(a.forall(function(e){ // false
+    return e % 5 == 0;
+}));
 ```
